@@ -1,8 +1,8 @@
 cook_book = {}
-ingredient_list = []
 recipe_name = ''
 with open('recipes.txt', encoding='utf-8') as file:
     while True:
+        ingredient_list = []
         recipe_name = read_data = file.readline().strip()
         sum_ingr = read_data = file.readline().strip()
         for i in range(int(sum_ingr)):
@@ -18,4 +18,10 @@ with open('recipes.txt', encoding='utf-8') as file:
             continue
         else:
             break
-print(cook_book)
+print('cook_book = {')
+for i, j in cook_book.items():
+    print(f" '{i}' : [")
+    for k in j:
+        print(f'\t{k}')
+    print('\t],')
+print('}')
