@@ -33,8 +33,19 @@ def print_book():
     print('}\n', '(-_-)'*20)
 
 # get_shop_list function
-def get_shop_list_by_dishes(dishes, person_count):
-    pass
+def get_shop_list_by_dishes(text_file, dishes, person_count):
+    shop_list_by_dishes = {}
+    shop_list = {}
+    for i in dishes:
+        for j, k in cook_book(text_file).items():
+            if i == j:
+                shop_list_by_dishes[j] = k 
+    for l, n in shop_list_by_dishes.items():
+        for p in n:
+            meas_quant = {}
+            meas_quant['measure'] = p['measure']
+            meas_quant['quantity'] = int(p['quantity']) * person_count
+            shop_list[p['ingredient_name']] = meas_quant
+    return shop_list
 
-
-# print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
+print(get_shop_list_by_dishes('recipes.txt', ['Запеченный картофель', 'Омлет'], 2))
