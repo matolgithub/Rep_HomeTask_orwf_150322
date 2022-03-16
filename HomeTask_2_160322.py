@@ -22,9 +22,6 @@ def cook_book(text_file):
                 break
         return cook_book
 
-# All cook-book printing
-print(f'It is simple all cook-book printing:\n\n{cook_book("recipes.txt")}\n', '(-_-)'*20, '\n')
-
 # Nice print method making
 def print_book():
     print(f'It is nice cook-book printing:\n\n', 'cook_book = {')
@@ -35,5 +32,9 @@ def print_book():
         print('\t],')
     print('}\n', '(-_-)'*20)
 
-# Nice cook-book printing
-print_book()
+# get_shop_list function
+def get_shop_list_by_dishes(dishes, person_count):
+    pass
+
+
+# print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
